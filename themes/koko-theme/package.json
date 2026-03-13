@@ -1,0 +1,23 @@
+{
+  "name": "koko-theme",
+  "displayName": "KOKO 幸祜",
+  "description": "KOKO 幸祜 - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "KOKO 幸祜",
+        "uiTheme": "vs-dark",
+        "path": "./themes/koko-theme-color-theme.json"
+      }
+    ]
+  }
+}

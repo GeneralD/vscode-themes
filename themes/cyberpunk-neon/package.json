@@ -1,0 +1,23 @@
+{
+  "name": "cyberpunk-neon",
+  "displayName": "Cyberpunk Neon",
+  "description": "Cyberpunk Neon - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Cyberpunk Neon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cyberpunk-neon-color-theme.json"
+      }
+    ]
+  }
+}
