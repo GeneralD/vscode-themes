@@ -1,0 +1,24 @@
+{
+  "name": "porco-rosso",
+  "displayName": "Porco Rosso",
+  "description": "Porco Rosso - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Porco Rosso",
+        "uiTheme": "vs-dark",
+        "path": "./themes/porco-rosso-color-theme.json"
+      }
+    ]
+  },
+  "icon": "icon.png"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "world-war-i",
+  "displayName": "World War I",
+  "description": "World War I - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "World War I",
+        "uiTheme": "vs-dark",
+        "path": "./themes/world-war-i-color-theme.json"
+      }
+    ]
+  }
+}

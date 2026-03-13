@@ -1,0 +1,7 @@
+{
+  "name": "World War I",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A somber dark theme evoking the Great War era. Trench mud browns, mustard gas yellows, rusted iron, and aged parchment — the muted palette of no man's land.",
+  "colors": ["#b8a038", "#a05030", "#6a7a8a", "#5a8a6a", "#161210"]
+}

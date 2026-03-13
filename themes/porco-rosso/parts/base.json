@@ -1,0 +1,7 @@
+{
+  "name": "Porco Rosso",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A warm, cinematic dark theme inspired by the Adriatic skies and crimson seaplanes of Porco Rosso. Rich reds, Mediterranean blues, sunset golds, and weathered bronze tones evoke the romance of interwar aviation.",
+  "colors": ["#c0392b", "#2e86ab", "#e8a838", "#8b6e4e", "#1a1520"]
+}
