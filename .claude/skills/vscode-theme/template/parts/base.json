@@ -1,5 +1,7 @@
 {
   "name": "{{THEME_NAME}}",
   "type": "dark",
-  "semanticHighlighting": true
+  "semanticHighlighting": true,
+  "description": "{{THEME_DESCRIPTION}}",
+  "colors": []
 }

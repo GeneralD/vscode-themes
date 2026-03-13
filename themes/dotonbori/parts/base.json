@@ -1,5 +1,7 @@
 {
   "name": "Dotonbori",
   "type": "dark",
-  "semanticHighlighting": true
+  "semanticHighlighting": true,
+  "description": "Osaka's neon-lit canal district at night. Warm lantern golds, neon reds, and shimmering cyan reflections paint the darkness of the bustling entertainment quarter.",
+  "colors": ["#e63946", "#f0a830", "#38b6c4", "#e84393", "#0c0e18"]
 }

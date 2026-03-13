@@ -38,7 +38,7 @@ This skill includes a theme builder script that enables efficient theme creation
 ├── .vscodeignore          # Excludes parts/ from .vsix
 ├── package.json           # Extension manifest
 ├── parts/                 # Edit these files to customize
-│   ├── base.json          # name, type, semanticHighlighting
+│   ├── base.json          # name, type, semanticHighlighting, description, colors
 │   ├── colors-editor.json # Editor colors
 │   ├── colors-ui.json     # UI colors (sidebar, tabs, etc.)
 │   ├── colors-terminal.json # Terminal colors
@@ -94,9 +94,14 @@ Edit the files in `<theme-id>/parts/` to customize the theme.
 {
   "name": "Theme Name",
   "type": "dark",
-  "semanticHighlighting": true
+  "semanticHighlighting": true,
+  "description": "A short description of the theme's concept and visual style",
+  "colors": ["#accent1", "#accent2", "#accent3", "#accent4", "#background"]
 }
 ```
+
+- `description`: Theme concept for the unified extension's README (auto-generated)
+- `colors`: 5 representative hex colors used as palette swatches in the README
 
 #### parts/colors-editor.json
 Editor-related colors:
@@ -170,40 +175,33 @@ Semantic token colors (optional, object format):
 }
 ```
 
-### Step 4: Merge and package
+### Step 4: Build and install
+
+This project provides pnpm scripts for building and installing. Prefer these over the theme-builder.js commands.
 
 ```bash
-# Merge parts into theme file
-node <skill-path>/theme-builder.js merge <theme-id>
+# Build all themes as a unified extension and install
+pnpm run install-unified
 
-# Package as .vsix
-node <skill-path>/theme-builder.js package <theme-id>
-
-# Install to VSCode
-code --install-extension <theme-id>/<theme-id>-0.0.1.vsix
+# Or build individually and install
+pnpm run install-themes
 ```
+
+Other available commands:
+```bash
+pnpm run build              # Build individual .vsix files (no install)
+pnpm run build:unified      # Build unified .vsix (no install)
+pnpm run uninstall-themes   # Uninstall individual themes
+pnpm run uninstall-unified  # Uninstall unified theme
+```
+
+The unified build auto-generates README.md (Details tab) and CHANGELOG.md from each theme's `base.json` metadata.
 
 ### Step 5: Notify user
 
 After installation:
 > Theme installed successfully!
 > Press `Cmd+K Cmd+T` (Mac) or `Ctrl+K Ctrl+T` (Windows/Linux) to select your new theme.
-
-## Updating an Existing Theme
-
-When updating a theme, bump the version before packaging:
-
-```bash
-# Bump version (default: patch)
-node <skill-path>/theme-builder.js bump <theme-id>
-
-# Merge and package
-node <skill-path>/theme-builder.js merge <theme-id>
-node <skill-path>/theme-builder.js package <theme-id>
-
-# Install updated theme
-code --install-extension <theme-id>/<theme-id>-<new-version>.vsix
-```
 
 ## Color Design Tips
 

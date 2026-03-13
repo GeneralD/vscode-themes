@@ -1,5 +1,7 @@
 {
   "name": "KOKO 幸祜",
   "type": "dark",
-  "semanticHighlighting": true
+  "semanticHighlighting": true,
+  "description": "A soft, dreamy dark theme inspired by gentle pastels and quiet elegance. Lavender pinks, mint greens, and warm golds float on a deep twilight canvas.",
+  "colors": ["#e8a0b8", "#88c8a0", "#b088e0", "#e8c888", "#141020"]
 }

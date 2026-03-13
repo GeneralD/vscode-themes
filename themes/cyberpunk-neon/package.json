@@ -19,5 +19,6 @@
         "path": "./themes/cyberpunk-neon-color-theme.json"
       }
     ]
-  }
+  },
+  "icon": "icon.png"
 }

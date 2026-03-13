@@ -3,7 +3,19 @@
   "type": "module",
   "scripts": {
     "build": "tsx scripts/build.ts",
-    "install-themes": "tsx scripts/build.ts --install"
+    "build:unified": "tsx scripts/build.ts --unified",
+    "install-themes": "tsx scripts/build.ts --install",
+    "install-unified": "tsx scripts/build.ts --unified --install",
+    "uninstall-themes": "tsx scripts/build.ts --uninstall",
+    "uninstall-unified": "tsx scripts/build.ts --unified --uninstall"
+  },
+  "unified": {
+    "name": "generald-themes",
+    "displayName": "GeneralD Themes",
+    "description": "A collection of custom VSCode themes by GeneralD",
+    "version": "0.0.1",
+    "publisher": "custom",
+    "repository": "https://github.com/GeneralD/vscode-themes"
   },
   "devDependencies": {
     "@vscode/vsce": "^2",

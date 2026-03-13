@@ -1,5 +1,7 @@
 {
   "name": "Deathcore",
   "type": "dark",
-  "semanticHighlighting": true
+  "semanticHighlighting": true,
+  "description": "A brutal dark theme forged in the void. Blood reds, bone whites, and decayed purples emerge from an abyss of pure black — as heavy as a breakdown.",
+  "colors": ["#b91c1c", "#c4b99a", "#7c3aed", "#4a7a3d", "#080808"]
 }

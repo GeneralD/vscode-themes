@@ -19,5 +19,6 @@
         "path": "./themes/deathcore-color-theme.json"
       }
     ]
-  }
+  },
+  "icon": "icon.png"
 }
