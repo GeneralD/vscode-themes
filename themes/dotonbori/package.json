@@ -1,0 +1,23 @@
+{
+  "name": "dotonbori",
+  "displayName": "Dotonbori",
+  "description": "Dotonbori - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Dotonbori",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dotonbori-color-theme.json"
+      }
+    ]
+  }
+}

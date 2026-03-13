@@ -18,9 +18,11 @@ importers:
         specifier: ^5
         version: 5.8.3
 
-  cyberpunk-neon: {}
+  themes/cyberpunk-neon: {}
 
-  koko-theme: {}
+  themes/deathcore: {}
+
+  themes/koko-theme: {}
 
 packages:
 
