@@ -52,16 +52,16 @@ This skill includes a theme builder script that enables efficient theme creation
 
 ```bash
 # Initialize a new theme from template
-node <skill-path>/theme-builder.js init <theme-id> "<theme-name>" [--type dark|light]
+npx tsx <skill-path>/theme-builder.ts init <theme-id> "<theme-name>" [--type dark|light]
 
 # Merge parts into final theme file
-node <skill-path>/theme-builder.js merge <theme-id>
+npx tsx <skill-path>/theme-builder.ts merge <theme-id>
 
 # Package as .vsix
-node <skill-path>/theme-builder.js package <theme-id>
+npx tsx <skill-path>/theme-builder.ts package <theme-id>
 
 # Bump version
-node <skill-path>/theme-builder.js bump <theme-id> [patch|minor|major]
+npx tsx <skill-path>/theme-builder.ts bump <theme-id> [patch|minor|major]
 ```
 
 ## Instructions
@@ -77,7 +77,7 @@ Ask the user for:
 ### Step 2: Initialize theme
 
 ```bash
-node <skill-path>/theme-builder.js init <theme-id> "<Theme Name>" --type dark
+npx tsx <skill-path>/theme-builder.ts init <theme-id> "<Theme Name>" --type dark
 ```
 
 Replace:
@@ -177,7 +177,7 @@ Semantic token colors (optional, object format):
 
 ### Step 4: Build and install
 
-This project provides pnpm scripts for building and installing. Prefer these over the theme-builder.js commands.
+This project provides pnpm scripts for building and installing. Prefer these over the theme-builder.ts commands.
 
 ```bash
 # Build all themes as a unified extension and install

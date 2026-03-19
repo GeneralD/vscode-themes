@@ -1,0 +1,7 @@
+{
+  "name": "Arknights",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A sleek dark theme inspired by the tactical RPG Arknights. Rhodes Island's cold, clinical interface meets Originium blue, operator gold, and crisis red across a battle-hardened terminal.",
+  "colors": ["#00B0FF", "#F0C040", "#E04050", "#7C8DA0", "#0C0E14"]
+}

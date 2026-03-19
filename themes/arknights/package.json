@@ -1,0 +1,23 @@
+{
+  "name": "arknights",
+  "displayName": "Arknights",
+  "description": "Arknights - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Arknights",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arknights-color-theme.json"
+      }
+    ]
+  }
+}
