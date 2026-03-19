@@ -1,7 +1,7 @@
 {
-  "name": "world-war-i",
-  "displayName": "World War I",
-  "description": "World War I - Custom VSCode Theme",
+  "name": "megaman-zero",
+  "displayName": "Megaman Zero",
+  "description": "Megaman Zero - Custom VSCode Theme",
   "version": "0.0.1",
   "publisher": "custom",
   "license": "MIT",
@@ -14,9 +14,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "World War I",
+        "label": "Megaman Zero",
         "uiTheme": "vs-dark",
-        "path": "./themes/world-war-i-color-theme.json"
+        "path": "./themes/megaman-zero-color-theme.json"
       }
     ]
   },

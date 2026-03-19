@@ -1,4 +1,6 @@
 themes/*/themes/
+themes/*/README.md
+themes/*/CHANGELOG.md
 *.vsix
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode

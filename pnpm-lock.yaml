@@ -22,7 +22,13 @@ importers:
 
   themes/deathcore: {}
 
+  themes/dotonbori: {}
+
   themes/koko-theme: {}
+
+  themes/porco-rosso: {}
+
+  themes/world-war-i: {}
 
 packages:
 

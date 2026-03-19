@@ -1,0 +1,7 @@
+{
+  "name": "Megaman Zero",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A fierce dark theme inspired by the Mega Man Zero series. Zero's crimson armor, the cyan glow of the Z-Saber, golden hair, and Cyber-elf green pulse through a battle-scarred dystopian interface.",
+  "colors": ["#E03050", "#00D8E8", "#E8C84A", "#44DD88", "#0D1420"]
+}

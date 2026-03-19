@@ -20,5 +20,6 @@
       }
     ]
   },
-  "icon": "icon.png"
+  "icon": "icon.png",
+  "repository": "https://github.com/GeneralD/vscode-themes"
 }
