@@ -1,0 +1,7 @@
+{
+  "name": "Akihabara",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A vivid neon dark theme inspired by Tokyo's Akihabara Electric Town. Anime pink signs, LED blue storefronts, arcade green glow, and golden lamplight pulse through the midnight backstreets.",
+  "colors": ["#FF4896", "#00AAFF", "#48FF90", "#FFD040", "#0E0818"]
+}
