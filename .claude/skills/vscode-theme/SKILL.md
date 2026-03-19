@@ -177,15 +177,15 @@ Semantic token colors (optional, object format):
 
 ### Step 4: Build and install
 
-This project provides pnpm scripts for building and installing. Prefer these over the theme-builder.ts commands.
+Detect which installation mode is active and use the appropriate command:
 
 ```bash
-# Build all themes as a unified extension and install
-pnpm run install-unified
-
-# Or build individually and install
-pnpm run install-themes
+# Check if unified extension is installed
+code --list-extensions | grep -q "custom.generald-themes"
 ```
+
+- **If unified is installed** → `pnpm run install-unified` (rebuilds all themes as one extension, auto uninstalls old version first)
+- **If unified is NOT installed** → `pnpm run install-themes` (builds and installs each theme individually)
 
 Other available commands:
 ```bash
@@ -197,9 +197,20 @@ pnpm run uninstall-unified  # Uninstall unified theme
 
 The unified build auto-generates README.md (Details tab) and CHANGELOG.md from each theme's `base.json` metadata.
 
-### Step 5: Notify user
+### Step 5: Offer to switch theme
 
-After installation:
+After installation, ask the user if they want to switch to the new theme.
+
+If yes, update the VSCode global settings:
+
+```bash
+# macOS
+VSCODE_SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
+```
+
+Read the file, update `"workbench.colorTheme"` to the new theme's display name (from `base.json`), and write it back. Be careful to preserve the rest of the settings.
+
+If no, just notify:
 > Theme installed successfully!
 > Press `Cmd+K Cmd+T` (Mac) or `Ctrl+K Ctrl+T` (Windows/Linux) to select your new theme.
 

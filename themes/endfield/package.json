@@ -1,0 +1,23 @@
+{
+  "name": "endfield",
+  "displayName": "Endfield",
+  "description": "Endfield - Custom VSCode Theme",
+  "version": "0.0.1",
+  "publisher": "custom",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Endfield",
+        "uiTheme": "vs-dark",
+        "path": "./themes/endfield-color-theme.json"
+      }
+    ]
+  }
+}

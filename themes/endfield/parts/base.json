@@ -1,0 +1,7 @@
+{
+  "name": "Endfield",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A frontier-tech dark theme inspired by Arknights: Endfield. Talos-II's amber deserts, Endministrator blue interfaces, Originium teal crystals, and rust-toned industrial outposts against the void of deep space.",
+  "colors": ["#5CA8D4", "#D4A86A", "#3DC8B0", "#C86040", "#10121A"]
+}

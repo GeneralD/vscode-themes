@@ -343,12 +343,17 @@ const buildUnified = (themeIds: readonly string[]): string => {
 const installExtension = (vsixPath: string): void =>
   execSync(`code --install-extension "${vsixPath}" --force`, { stdio: "inherit" })
 
+const isExtensionInstalled = (extensionId: string): boolean =>
+  execSync("code --list-extensions", { encoding: "utf8" })
+    .split("\n")
+    .some(line => line.trim().toLowerCase() === extensionId.toLowerCase())
+
 const uninstallExtension = (extensionId: string): void => {
-  try {
-    execSync(`code --uninstall-extension "${extensionId}"`, { stdio: "inherit" })
-  } catch {
+  if (!isExtensionInstalled(extensionId)) {
     console.log(`Skipped (not installed): ${extensionId}`)
+    return
   }
+  execSync(`code --uninstall-extension "${extensionId}"`, { stdio: "inherit" })
 }
 
 const getExtensionId = (publisher: string, name: string): string =>
@@ -377,7 +382,9 @@ if (shouldUninstall) {
   console.log(`\nUnified package: ${vsixPath}`)
 
   if (shouldInstall) {
-    console.log("\n--- Installing ---")
+    console.log("\n--- Reinstalling ---")
+    const { unified } = readJson<RootPackageJson>(join(rootDir, "package.json"))
+    uninstallExtension(getExtensionId(unified.publisher, unified.name))
     installExtension(vsixPath)
     console.log("\nUnified theme installed. Press Cmd+K Cmd+T to select.")
   }
