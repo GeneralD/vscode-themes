@@ -48,6 +48,14 @@ A collection of custom VSCode themes by GeneralD
 
 **Type:** dark | **Palette:** ![#e63946](https://img.shields.io/badge/-e63946-e63946?style=flat-square) ![#f0a830](https://img.shields.io/badge/-f0a830-f0a830?style=flat-square) ![#38b6c4](https://img.shields.io/badge/-38b6c4-38b6c4?style=flat-square) ![#e84393](https://img.shields.io/badge/-e84393-e84393?style=flat-square) ![#0c0e18](https://img.shields.io/badge/-0c0e18-0c0e18?style=flat-square)
 
+### Electrical Parade
+
+![Electrical Parade](themes/electrical-parade/assets/hero.png)
+
+> A dazzling dark theme inspired by the nighttime electrical light parade. Thousands of candy-colored LEDs — hot magenta, electric blue, warm gold, emerald green, and royal violet — glow and march across a deep midnight-indigo sky.
+
+**Type:** dark | **Palette:** ![#FF4FB8](https://img.shields.io/badge/-FF4FB8-FF4FB8?style=flat-square) ![#2DBDFF](https://img.shields.io/badge/-2DBDFF-2DBDFF?style=flat-square) ![#FFC93C](https://img.shields.io/badge/-FFC93C-FFC93C?style=flat-square) ![#3DE88C](https://img.shields.io/badge/-3DE88C-3DE88C?style=flat-square) ![#0C0A22](https://img.shields.io/badge/-0C0A22-0C0A22?style=flat-square)
+
 ### Endfield
 
 ![Endfield](themes/endfield/assets/hero.png)

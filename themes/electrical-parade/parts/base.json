@@ -1,0 +1,7 @@
+{
+  "name": "Electrical Parade",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "description": "A dazzling dark theme inspired by the nighttime electrical light parade. Thousands of candy-colored LEDs — hot magenta, electric blue, warm gold, emerald green, and royal violet — glow and march across a deep midnight-indigo sky.",
+  "colors": ["#FF4FB8", "#2DBDFF", "#FFC93C", "#3DE88C", "#0C0A22"]
+}
