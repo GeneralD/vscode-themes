@@ -18,13 +18,21 @@ importers:
         specifier: ^5
         version: 5.8.3
 
+  themes/akihabara: {}
+
+  themes/arknights: {}
+
   themes/cyberpunk-neon: {}
 
   themes/deathcore: {}
 
   themes/dotonbori: {}
 
+  themes/endfield: {}
+
   themes/koko-theme: {}
+
+  themes/megaman-zero: {}
 
   themes/porco-rosso: {}
 
