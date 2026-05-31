@@ -4,6 +4,7 @@
   "scripts": {
     "build": "tsx scripts/build.ts",
     "build:unified": "tsx scripts/build.ts --unified",
+    "readme": "tsx scripts/build.ts --readme",
     "install-themes": "tsx scripts/build.ts --install",
     "install-unified": "tsx scripts/build.ts --unified --install",
     "uninstall-themes": "tsx scripts/build.ts --uninstall",

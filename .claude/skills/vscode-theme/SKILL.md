@@ -35,8 +35,10 @@ This skill includes a theme builder script that enables efficient theme creation
 
 ```
 <theme-id>/
-├── .vscodeignore          # Excludes parts/ from .vsix
+├── .vscodeignore          # Excludes parts/ and assets/ from .vsix
 ├── package.json           # Extension manifest
+├── assets/
+│   └── hero.png           # Hero banner (make-image) shown atop the README
 ├── parts/                 # Edit these files to customize
 │   ├── base.json          # name, type, semanticHighlighting, description, colors
 │   ├── colors-editor.json # Editor colors
@@ -57,7 +59,9 @@ npx tsx <skill-path>/theme-builder.ts init <theme-id> "<theme-name>" [--type dar
 # Merge parts into final theme file
 npx tsx <skill-path>/theme-builder.ts merge <theme-id>
 
-# Package as .vsix
+# Package as .vsix — delegates to `pnpm build`, which rebuilds ALL themes
+# under themes/* (each gets README + hero + swatches + icon + CHANGELOG).
+# The <theme-id> arg only selects which resulting .vsix path is returned.
 npx tsx <skill-path>/theme-builder.ts package <theme-id>
 
 # Bump version
@@ -100,8 +104,8 @@ Edit the files in `<theme-id>/parts/` to customize the theme.
 }
 ```
 
-- `description`: Theme concept for the unified extension's README (auto-generated)
-- `colors`: 5 representative hex colors used as palette swatches in the README
+- `description`: Theme concept for the README (auto-generated; appears under the hero)
+- `colors`: 5 representative hex colors rendered as shields.io color-swatch badges (filled with the hex, auto-contrasted text) in the README
 
 #### parts/colors-editor.json
 Editor-related colors:
@@ -175,7 +179,32 @@ Semantic token colors (optional, object format):
 }
 ```
 
-### Step 4: Build and install
+### Step 4: Generate a hero image
+
+Generate a hero/banner image that captures the theme's concept and save it to
+`themes/<theme-id>/assets/hero.png`. It appears at the top of the theme's README
+in the VSCode Extensions **Details** tab and in the repo's theme gallery.
+
+Use the `make-image` skill (Codex CLI / gpt-image-2):
+
+- **Size:** `1536x1024` (landscape banner)
+- **Prompt:** tailor it to the theme's name, mood, and palette — pull the
+  subject, setting, and dominant colors from `base.json`. A banner that matches
+  the theme lands far better than a generic graphic.
+- Garbled fake text in AI art is fine — just avoid prompts that *require*
+  legible text.
+
+Notes:
+
+- The hero is referenced by its committed **GitHub raw URL**, so it renders in
+  the Details tab only **after** the image is committed and pushed to `main`.
+  Before push the link 404s — that is expected, not a bug.
+- The build wires the hero in via `existsSync`: if `assets/hero.png` is absent,
+  the README is generated without it (no broken-image link).
+- `assets/**` is excluded from the `.vsix` (the README points at the raw URL),
+  so the hero never bloats the package.
+
+### Step 5: Build and install
 
 Detect which installation mode is active and use the appropriate command:
 
@@ -195,9 +224,9 @@ pnpm run uninstall-themes   # Uninstall individual themes
 pnpm run uninstall-unified  # Uninstall unified theme
 ```
 
-The unified build auto-generates README.md (Details tab) and CHANGELOG.md from each theme's `base.json` metadata.
+Every build (individual or unified) auto-generates each theme's README.md (Details tab — hero image + color-swatch palette + description), CHANGELOG.md, and icon from `base.json` and `assets/hero.png`. It also regenerates the repo's root `README.md` (theme gallery). Run `pnpm readme` to refresh only the root README.
 
-### Step 5: Offer to switch theme
+### Step 6: Offer to switch theme
 
 After installation, ask the user if they want to switch to the new theme.
 

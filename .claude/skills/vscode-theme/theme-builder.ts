@@ -11,7 +11,7 @@
 
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 
 const SCRIPT_DIR = import.meta.dirname;
 const PROJECT_ROOT = join(SCRIPT_DIR, "..", "..", "..");
@@ -137,13 +137,16 @@ const mergeTheme = (themeId: string): string => {
 
 const packageTheme = (themeId: string): string => {
 	const dir = themeDir(themeId);
-	const packageJsonPath = join(dir, "package.json");
-	if (!existsSync(packageJsonPath)) fail(`Theme "${themeId}" not found.`);
+	if (!existsSync(join(dir, "package.json"))) fail(`Theme "${themeId}" not found.`);
 
-	const { version } = readJson<{ version: string }>(packageJsonPath);
-
+	// Delegate to the canonical repo build (scripts/build.ts) so README (with
+	// hero image + color-swatch palette), icon, CHANGELOG, and repository
+	// metadata are generated consistently for every theme. `pnpm build`
+	// discovers and packages all themes under themes/*. execFileSync (no shell)
+	// keeps the call injection-free.
 	try {
-		execSync("vsce package", { cwd: dir, stdio: "inherit" });
+		execFileSync("pnpm", ["build"], { cwd: PROJECT_ROOT, stdio: "inherit" });
+		const { version } = readJson<{ version: string }>(join(dir, "package.json"));
 		const vsixPath = join(dir, `${themeId}-${version}.vsix`);
 		console.log(`\nPackaged: ${vsixPath}`);
 		return vsixPath;
@@ -188,7 +191,9 @@ Commands:
       Example: tsx theme-builder.ts merge ocean-blue
 
   package <theme-id>
-      Package as .vsix file
+      Delegate to \`pnpm build\` — rebuilds ALL themes under themes/* (each
+      gets README + hero + swatches + icon + CHANGELOG). <theme-id> only
+      selects which resulting .vsix path is returned.
       Example: tsx theme-builder.ts package ocean-blue
 
   bump <theme-id> [patch|minor|major]
